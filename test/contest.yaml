@@ -1,0 +1,11 @@
+name: test
+description: Template contest
+location: Online
+date: 1-31 January 2025
+logo: logo.png
+
+# Show time and memory limit in the statements
+show_summary: true
+
+tasks:
+  - aplusb

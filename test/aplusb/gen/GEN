@@ -1,0 +1,12 @@
+#ST: 0
+#STNAME: samples
+
+#ST: 30
+#STNAME: small
+
+#ST: 30
+#STNAME: azero
+
+#ST: 40
+#STNAME: full
+#STDEP: *

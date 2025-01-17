@@ -543,6 +543,8 @@
   if file == "" { "stdout" } else { file }
 }
 
+#let task_name = yaml("../task.yaml").at("name", default: "");
+
 // Subtask constraints and scores
 
 #let constraint = {

@@ -1,0 +1,9 @@
+MAXA: 100000
+MAXB: 100000
+
+subtask:
+  - {}
+  - {}                          # Samples
+  - {MAXA: 1000, MAXB: 1000}    # Small
+  - {MAXA: 0}                   # A=0
+  - {}                          # Complete
