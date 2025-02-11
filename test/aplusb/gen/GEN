@@ -1,12 +1,20 @@
 #ST: 0
 #STNAME: samples
 
+10 10 0
+
 #ST: 30
 #STNAME: small
+
+1000 1000 1
 
 #ST: 30
 #STNAME: azero
 
+0 100000 2
+
 #ST: 40
 #STNAME: full
 #STDEP: *
+
+100000 100000 3

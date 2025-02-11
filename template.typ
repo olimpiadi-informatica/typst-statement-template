@@ -1,3 +1,5 @@
+#import "@preview/unify:0.7.0": *
+
 // Section names, with translations
 #let localize(lang, string) = {
   let localization = (
@@ -549,7 +551,24 @@
 
 #let constraint = {
   let constraints_yaml = sys.inputs.at("constraints_yaml", default: "../gen/constraints.yaml")
-  yaml(constraints_yaml)
+  let constraints = yaml(constraints_yaml)
+
+  for (name, constraint) in constraints.pairs() {
+    if type(constraint) == int and constraint >= 10000 {
+      constraints.insert(name, num(constraint, thousandsep: "#h(0.133333em)"))
+    }
+  }
+
+  for (i, subtask) in constraints.subtask.enumerate() {
+    for (name, constraint) in subtask.pairs() {
+      if type(constraint) == int and constraint >= 10000 {
+        subtask.insert(name, num(constraint, thousandsep: "#h(0.133333em)"))
+      }
+    }
+    constraints.subtask.at(i) = subtask
+  }
+
+  constraints
 }
 
 #let subtasks(subtask_descriptions) = {

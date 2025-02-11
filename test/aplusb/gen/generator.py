@@ -11,5 +11,4 @@ if __name__ == "__main__":
     A = random.choice(range(0, A + 1))
     B = random.choice(range(0, B + 1))
 
-    print(A)
-    print(B)
+    print(A, B)
