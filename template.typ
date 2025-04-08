@@ -575,7 +575,7 @@
   let gen_gen = sys.inputs.at("gen_gen", default: "../gen/GEN");
   let gen_gen = read(gen_gen)
   let lines = gen_gen.split("\n");
-  let scores = lines.filter(l => l.starts-with("#ST:")).map(l => int(l.slice(5)))
+  let scores = lines.filter(l => l.starts-with("#ST:")).map(l => int(l.slice(5).trim()))
   assert.eq(
     scores.len(),
     constraint.subtask.len() - 1,
