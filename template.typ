@@ -388,9 +388,8 @@
 
 // Main show rule for statements
 #let statement(doc) = {
-  set text(size: 11pt, font: (
-    "Latin Modern Roman",
-  ))
+  show math.equation.where(block: false): it => box(it)
+  set text(size: 11pt, font: ("Latin Modern Roman",))
   // raw text defaults to 80% smaller, undo that.
   show raw: set text(size: 1.25em, font: ("Latin Modern Mono"))
   set par(justify: true)
@@ -490,9 +489,8 @@
 
 // Main show rule for editorials
 #let editorial(doc) = {
-  set text(size: 11pt, font: (
-    "Latin Modern Roman",
-  ))
+  show math.equation.where(block: false): it => box(it)
+  set text(size: 11pt, font: ("Latin Modern Roman",))
   // raw text defaults to 80% smaller, undo that.
   show raw: set text(size: 1.25em, font: ("Latin Modern Mono"))
   set par(justify: true)
@@ -686,7 +684,7 @@
 
 // Useful commands
 
-#let box(stroke_color, background_color, icon, content) = {
+#let template_box(stroke_color, background_color, icon, content) = {
   block(
     stroke: 2pt + stroke_color,
     fill: background_color,
@@ -705,11 +703,11 @@
 }
 
 #let note(content) = {
-  box(luma(123), none, text(size: 1.7em, sym.arrow.r.stroked), content)
+  template_box(luma(123), none, text(size: 1.7em, sym.arrow.r.stroked), content)
 }
 
 #let warn(content) = {
-  box(
+  template_box(
     orange,
     rgb(255, 0, 0, 50), 
     block(
@@ -769,7 +767,7 @@
     ..for i in array.range(num) {
       let infile = name + ".input" + str(i) + ".txt";
       let outfile = name + ".output" + str(i) + ".txt";
-      (raw(read(infile)), raw(read(outfile)))
+      (box(raw(read(infile))), box(raw(read(outfile))))
     }
   )
 }
