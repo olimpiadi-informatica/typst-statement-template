@@ -4,9 +4,7 @@
 #set text(lang: "en")
 
 /* Statement content block */
-#[
-#show: doc => statement(doc)
-
+#statement[
 Given two integers $A$ and $B$, print their sum.
 
 /* Figures are insert with the figure command */
@@ -98,8 +96,6 @@ In the *second sample case*, we are asked to compute $2+5=7$.\
 /* Editorial content block - can be omitted 
  * Compile with `task-maker-tools booklet --booklet-solutions`
  */
-#[
-#show: doc => editorial(doc)
-
+#editorial[
 Is is enough to sum $A$ and $B$.
 ]
