@@ -373,6 +373,16 @@
       "pt": "Avaliador Padrão",
       "es": "Sample Grader",
     ),
+    "Grader": (
+      "nl": "Grader",
+      "en": "Grader",
+      "fr": "Évaluateur",
+      "de": "Grader",
+      "hu": "Értékelő",
+      "it": "Grader",
+      "pt": "Avaliador",
+      "es": "Grader",
+    ),
   )
 
   let english = localization.at(string).at("en")
@@ -770,4 +780,65 @@
       (box(raw(read(infile))), box(raw(read(outfile))))
     }
   )
+}
+
+#let examples-interactive(num) = {
+  context heading(localize(text.lang, "Examples"), level: 2)
+
+  let name = yaml("../task.yaml").name;
+
+  for i in array.range(num) {
+    let file = name + ".interaction" + str(i) + ".txt";
+    let lines = ();
+    for line in read(file).split("\n") {
+      if line.len() < 1 {
+        continue;
+      }
+      if line.starts-with("<") {
+        if lines.len() == 0 or not lines.at(lines.len()-1).at(1) {
+          lines.push(((), true))
+        }
+      } else if line.starts-with(">") {
+        if lines.len() == 0 or lines.at(lines.len()-1).at(1) {
+          lines.push(((), false))
+        }
+      } else {
+        panic("Example " + str(i+1) + ": line " + line + " starts with neither < nor >")
+      }
+      lines.at(lines.len()-1).at(0).push(line.slice(1));
+    }
+
+    block(
+      breakable: false,
+      table(
+        columns: (1fr, 0.0fr, 1fr),
+        stroke: none,
+        row-gutter: 3pt,
+        align: (x, y) => {
+          if y == 0 { center } else { auto }
+        },
+        table.header(
+          context strong(localize(text.lang, "Grader")),
+          [],
+          context strong(localize(text.lang, "Solution")),
+        ),
+        ..for (l, is_input) in lines {
+          let cell = table.cell(stroke: 0.1pt + black, colspan: 2, fill: luma(250), raw(l.join("\n")));
+          let pat-col = luma(245);
+          let pat-col2 = luma(255);
+          let pat = tiling(
+            size: (15pt, 15pt),
+            relative: "parent",
+            rect(fill: gradient.linear(angle: 45deg, pat-col, pat-col2, pat-col, pat-col2).sharp(4))
+          );
+          let placeholder = table.cell(fill: pat, []);
+          if is_input {
+            (cell, placeholder)
+          } else {
+            (placeholder, cell)
+          }
+        }
+      )
+    )
+  }
 }
