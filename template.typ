@@ -579,7 +579,7 @@
   constraints
 }
 
-#let subtasks(subtask_descriptions) = {
+#let subtasks(subtask_descriptions, index_start: 1) = {
   let gen_gen = sys.inputs.at("gen_gen", default: "../gen/GEN");
   let gen_gen = read(gen_gen)
   let lines = gen_gen.split("\n");
@@ -599,7 +599,7 @@
     let st = localize(text.lang, "Subtask");
 
     let max_subtask_idx_len = indices.map(idx => {
-      measure([*#{st(idx+1)}*]).width
+      measure([*#{st(idx+index_start)}*]).width
     }).sorted().last();
     let max_subtask_score_len = scores.map(score => {
       measure([*#score*]).width
@@ -616,7 +616,7 @@
         }
       }
       let description = desc(cnst);
-      let stidx = box(width: max_subtask_idx_len, [#{st(index+1)}])
+      let stidx = box(width: max_subtask_idx_len, [#{st(index+index_start)}])
       let score = [#box(width: max_subtask_score_len, [#h(1fr) #score]) #localize(text.lang, "points")];
       let subtask_intro = [#stidx [#score]];
       (subtask_intro, description)
@@ -630,7 +630,7 @@
   }
 }
 
-#let ois_subtasks(subtask_descriptions, subtask_syllabus_levels) = {
+#let ois_subtasks(subtask_descriptions, subtask_syllabus_levels, index_start: 1) = {
   let gen_gen = sys.inputs.at("gen_gen", default: "../gen/GEN");
   let gen_gen = read(gen_gen)
   let lines = gen_gen.split("\n");
@@ -665,7 +665,7 @@
         }
       }
       let description = desc(cnst);
-      let stidx = [#st(index+1)]
+      let stidx = [#st(index+index_start)]
       let score = [(#score #localize(text.lang, "points"))];
       let subtask_intro = [*#stidx* #score];
       (subtask_intro, description)
