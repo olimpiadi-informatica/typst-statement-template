@@ -458,11 +458,11 @@
   let logo = contest_yaml.at("logo", default: none);
   let show_summary = contest_yaml.at("show_summary", default: false)
 
-  let task_yaml = yaml("../task.yaml");
-  let name = task_yaml.name;
-  let title = task_yaml.title;
-  let time_limit = task_yaml.time_limit;
-  let memory_limit = task_yaml.memory_limit;
+  let task_yaml = yaml(sys.inputs.at("task_yaml", default: "../task.yaml"));
+  let name = task_yaml.at("name", default: "noname");
+  let title = task_yaml.at("title", default: "No Name");
+  let time_limit = task_yaml.at("time_limit", default: 0);
+  let memory_limit = task_yaml.at("memory_limit", default: 0);
   let syllabus = task_yaml.at(
     "syllabuslevel", 
     // incoherence between tmr internal serializer and task.yaml
@@ -554,9 +554,9 @@
   }
 
   let show_solution_contest_yaml = contest_yaml.at("show_solutions", default: false)
-
-  let task_yaml = yaml("../task.yaml");
-  let name = task_yaml.name;
+  
+  let task_yaml = yaml(sys.inputs.at("task_yaml", default: "../task.yaml"));
+  let name = task_yaml.at("name", default: "noname");
 
   let footer_text = context [
     #set text(size: 10pt)
@@ -582,12 +582,12 @@
 }
 
 #let infile = {
-  let file = yaml("../task.yaml").at("infile", default: "");
+  let file = yaml(sys.inputs.at("task_yaml", default: "../task.yaml")).at("infile", default: "");
   if file == "" { "stdin" } else { file }
 }
 
 #let outfile = {
-  let file = yaml("../task.yaml").at("outfile", default: "");
+  let file = yaml(sys.inputs.at("task_yaml", default: "../task.yaml")).at("outfile", default: "");
   if file == "" { "stdout" } else { file }
 }
 
