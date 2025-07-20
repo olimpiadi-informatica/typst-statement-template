@@ -427,12 +427,25 @@
   localization.at(string).at(lang, default: english)
 }
 
-#let implementation = context heading(localize(text.lang, "Implementation"), level: 2) 
-#let samplegrader = context heading(localize(text.lang, "SampleGrader"), level: 2) 
-#let constraints = context heading(localize(text.lang, "Constraints"), level: 2) 
-#let scoring = context heading(localize(text.lang, "Scoring"), level: 2) 
-#let explanation = context heading(localize(text.lang, "Explanation"), level: 2) 
-#let solution = context heading(localize(text.lang, "Solution"), level: 2) 
+#let implementation = context [
+  == #localize(text.lang, "Implementation") <implementation>
+]
+#let samplegrader = context [
+  == #localize(text.lang, "SampleGrader") <samplegrader>
+]
+#let constraints = context [
+  == #localize(text.lang, "Constraints") <constraint>
+]
+#let scoring = context [
+  == #localize(text.lang, "Scoring") <scoring>
+]
+#let explanation = context [
+  == #localize(text.lang, "Explanation") <explanation>
+]
+#let solution = context [
+  == #localize(text.lang, "Solution") <solution>
+]
+
 
 // Main show rule for statements
 #let statement(doc) = {
@@ -794,7 +807,7 @@
 }
 
 #let examples(num) = {
-  context heading(localize(text.lang, "Examples"), level: 2)
+  context [== #localize(text.lang, "Examples") <examples>]
 
   let name = yaml("../task.yaml").name;
 
@@ -821,7 +834,7 @@
 }
 
 #let examples-interactive(num) = {
-  context heading(localize(text.lang, "Examples"), level: 2)
+  context [== #localize(text.lang, "Examples") <examples>]
 
   let name = yaml("../task.yaml").name;
 

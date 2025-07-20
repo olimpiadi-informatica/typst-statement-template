@@ -20,7 +20,7 @@ Given two integers $A$ and $B$, print their sum.
 
 /* Warn box for important remarks */
 #warn[
-  Carries may happen while adding numbers.
+  Carries may happen while adding numbers. For this hard task, examples can be found in the #link(<examples>, [Examples])
 ]
 
 #implementation
