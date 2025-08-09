@@ -806,7 +806,7 @@
   )
 }
 
-#let examples(num) = {
+#let examples(num, infile: infile, outfile: outfile) = {
   context [== #localize(text.lang, "Examples") <examples>]
 
   let name = yaml("../task.yaml").name;
