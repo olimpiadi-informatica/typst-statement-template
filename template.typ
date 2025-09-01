@@ -13,6 +13,7 @@
       "pt": "Solução",
       "es": "Solución",
       "lb": "Léisung",
+      "dv": "ޙައްލު",
     ),
     "PageXofY": (
       "nl": (count, total) => "Pagina " + str(count) + " van " + str(total),
@@ -24,6 +25,7 @@
       "pt": (count, total) => "Página " + str(count) + " de " + str(total),
       "es": (count, total) => "Página " + str(count) + " de " + str(total),
       "lb": (count, total) => "Säit " + str(count) + " vun " + str(total),
+      "dv": (count, total) => "ޞަފްޙާ " + str(count) + " ގެ " + str(total),
     ),
     "Subtask": (
       "nl": it => "Subtask " + str(it),
@@ -35,6 +37,7 @@
       "pt": it => "Subtarefa " + str(it),
       "es": it => "Subtask " + str(it),
       "lb": it => "Subtask " + str(it),
+      "dv": it => "ސަބްޓާސްކް " + str(it),
     ),
     "Day": (
       "nl": it => "Dag " + str(it),
@@ -46,6 +49,7 @@
       "pt": it => "Dia " + str(it),
       "es": it => "Día " + str(it),
       "lb": it => "Dag " + str(it),
+      "dv": it => str(it) + " ވަނަ ދުވަސް",
     ),
     "Problem": (
       "nl": it => "Probleem " + str(it),
@@ -57,6 +61,7 @@
       "pt": it => "Problema " + str(it),
       "es": it => "Problema " + str(it),
       "lb": it => "Problem " + str(it),
+      "dv": it => "މައްސަލަ " + str(it),
     ),
     "ProblemAuthor": (
       "nl": "Auteur",
@@ -68,6 +73,7 @@
       "pt": "Autor",
       "es": "Autor",
       "lb": "Auteur",
+      "dv": "ލިޔުންތެރިޔާ",
     ),
     "ProblemOrigin": (
       "nl": "Bron",
@@ -79,6 +85,7 @@
       "pt": "Origem",
       "es": "Origen",
       "lb": "Origine",
+      "dv": "އޮރިޖިން",
     ),
     "InputFileName": (
       "nl": "Input file",
@@ -90,6 +97,7 @@
       "pt": "Ficheiro de input",
       "es": "Archivo de entrada",
       "lb": "Input-Fichier",
+      "dv": "އިންޕުޓް ފައިލް",
     ),
     "OutputFileName": (
       "nl": "Output file",
@@ -101,6 +109,7 @@
       "pt": "Ficheiro de output",
       "es": "Archivo de salida",
       "lb": "Output-Fichier",
+      "dv": "އައުޓްޕުޓް ފައިލް",
     ),
     "TimeLimit": (
       "nl": "Tijdslimiet",
@@ -112,6 +121,7 @@
       "pt": "Limite de tempo",
       "es": "Límite de tiempo",
       "lb": "Zäitlimitt",
+      "dv": "ވަގުތު ކަނޑައެޅިފައިވާ",
     ),
     "MemoryLimit": (
       "nl": "Geheugenlimiet",
@@ -123,6 +133,7 @@
       "pt": "Limite de memória",
       "es": "Límite de memoria",
       "lb": "Späicherlimitt",
+      "dv": "މެމޮރީ ލިމިޓް",
     ),
     "Difficulty": (
       "nl": "Moeilijkheid",
@@ -134,6 +145,7 @@
       "pt": "Dificuldade",
       "es": "Dificultad",
       "lb": "Schwieregkeetsgrad",
+      "dv": "ދަތިކަން",
     ),
     "Feedback": (
       "nl": "Feedback",
@@ -145,6 +157,7 @@
       "pt": "Feedback",
       "es": "Feedback",
       "lb": "Feedback",
+      "dv": "ފީޑްބެކް",
     ),
     "stdin": (
       "nl": "standard input",
@@ -156,6 +169,7 @@
       "pt": "standard input",
       "es": "standard input",
       "lb": "Standard Input",
+      "dv": "ސްޓޭންޑަރޑް އިންޕުޓް",
     ),
     "stdout": (
       "nl": "standard output",
@@ -167,6 +181,7 @@
       "pt": "standard output",
       "es": "standard output",
       "lb": "Standard Output",
+      "dv": "ސްޓޭންޑަރޑް އައުޓްޕުޓް",
     ),
     "Specification": (
       "nl": "Specificatie",
@@ -178,6 +193,7 @@
       "pt": "Especificação",
       "es": "Descripción",
       "lb": "Beschreiwung",
+      "dv": "ތަފްޞީލު",
     ),
     "Input": (
       "nl": "Invoer",
@@ -189,6 +205,7 @@
       "pt": "Input",
       "es": "Datos de entrada",
       "lb": "Input",
+      "dv": "އިންޕުޓް",
     ),
     "Output": (
       "nl": "Uitvoer",
@@ -200,6 +217,7 @@
       "pt": "Output",
       "es": "Datos de salida",
       "lb": "Output",
+      "dv": "އައުޓްޕުޓް",
     ),
     "Example": (
       "nl": "Voorbeeld",
@@ -211,6 +229,7 @@
       "pt": "Exemplo",
       "es": "Ejemplo de entrada/salida",
       "lb": "Beispill",
+      "dv": "މިސާލު",
     ),
     "Examples": (
       "nl": "Voorbeelden",
@@ -222,6 +241,7 @@
       "pt": "Exemplos",
       "es": "Ejemplos de entrada/salida",
       "lb": "Beispiller",
+      "dv": "މިސާލުތައް",
     ),
     "ExampleNotes": (
       "nl": "Let op",
@@ -233,6 +253,7 @@
       "pt": "Notas",
       "es": "Notas",
       "lb": "Bemierkungen",
+      "dv": "ނޯޓްސް",
     ),
     "Explanation": (
       "nl": "Uitleg",
@@ -244,6 +265,7 @@
       "pt": "Explicação",
       "es": "Explicación",
       "lb": "Erklärung",
+      "dv": "ތަފްޞީލު",
     ),
     "Explanations": (
       "nl": "Uitleg",
@@ -255,6 +277,7 @@
       "pt": "Explicações",
       "es": "Explicaciones",
       "lb": "Erklärungen",
+      "dv": "ބަޔާންތައް",
     ),
     "Illustration": (
       "nl": "Illustratie",
@@ -266,6 +289,7 @@
       "pt": "Ilustração",
       "es": "Ilustración",
       "lb": "Illustratioun",
+      "dv": "އިލްސްޓްރޭޝަން",
     ),
     "Implementation": (
       "nl": "Implementatie",
@@ -277,6 +301,7 @@
       "pt": "Implementação",
       "es": "Implementación",
       "lb": "Implementéirung",
+      "dv": "ތަންފީޒުކުރުން",
     ),
     "Scoring": (
       "nl": "Scoring",
@@ -288,6 +313,7 @@
       "pt": "Pontuação",
       "es": "Puntuación",
       "lb": "Punkteverdeelung",
+      "dv": "ލަނޑު ޖެހުން",
     ),
     "Note": (
       "nl": "Let op",
@@ -299,6 +325,7 @@
       "pt": "Nota",
       "es": "Notas",
       "lb": "Bemierkung",
+      "dv": "ނޯޓް",
     ),
     "Notes": (
       "nl": "Let op",
@@ -310,6 +337,7 @@
       "pt": "Notas",
       "es": "Notas",
       "lb": "Bemierkungen",
+      "dv": "ނޯޓްސް",
     ),
     "Constraints": (
       "nl": "Randvoorwaarden",
@@ -321,6 +349,7 @@
       "pt": "Restrições",
       "es": "Restricciones",
       "lb": "Contrainten",
+      "dv": "ކޮންސްޓްރެއިންޓްސް",
     ),
     "points": (
       "nl": "punten",
@@ -332,6 +361,7 @@
       "pt": "pontos",
       "es": "puntos",
       "lb": "Punkten",
+      "dv": "ޕޮއިންޓްތައް",
     ),
     "notstated": (
       "nl": "niet vermeld",
@@ -343,6 +373,7 @@
       "pt": "não indicado",
       "es": "no especificado",
       "lb": "net uginn",
+      "dv": "ބަޔާންކޮށްފައެއް ނުވެއެވެ",
     ),
     "IntentionallyBlankPage": (
       "nl": "Deze pagina is bewust leeg",
@@ -354,6 +385,7 @@
       "pt": "Esta página foi intencionalmente deixada em branco",
       "es": "página intencionalmente en blanco",
       "lb": "Dës Säit ass absichtlech wäiss",
+      "dv": "މި ޞަފްޙާއަކީ ގަސްތުގައި ހުސްކޮށް ބާއްވާފައިވާ ޞަފްޙާއެކެވެ",
     ),
     "defaultinputname": (
       "nl": "test",
@@ -365,6 +397,7 @@
       "pt": "teste",
       "es": "test",
       "lb": "Test",
+      "dv": "އިމްތިޙާން",
     ),
     "defaultoutputname": (
       "nl": "antwoord",
@@ -376,6 +409,7 @@
       "pt": "resposta",
       "es": "respuesta",
       "lb": "Äntwert",
+      "dv": "ޖަވާބު",
     ),
     "revision": (
       "nl": "v",
@@ -387,6 +421,7 @@
       "pt": "v",
       "es": "v",
       "lb": "v",
+      "dv": "v",
     ),
     "seconds": (
       "nl": "seconden",
@@ -398,6 +433,7 @@
       "pt": "segundos",
       "es": "segundos",
       "lb": "Sekunden",
+      "dv": "ސިކުންތު",
     ),
     "SampleGrader": (
       "nl": "Voorbeeld Grader",
@@ -409,6 +445,7 @@
       "pt": "Avaliador Padrão",
       "es": "Sample Grader",
       "lb": "Beispill-Grader",
+      "dv": "ސާމްޕަލް ގްރޭޑަރ",
     ),
     "Grader": (
       "nl": "Grader",
@@ -420,6 +457,7 @@
       "pt": "Avaliador",
       "es": "Grader",
       "lb": "Grader",
+      "dv": "ގްރޭޑަރ",
     ),
   )
 
