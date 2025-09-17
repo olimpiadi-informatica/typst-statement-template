@@ -2,6 +2,7 @@
 
 /* Setting the statement language for localization */
 #set text(lang: "en")
+#override_localization.update(_ => (:))
 
 /* Statement content block */
 #statement[
