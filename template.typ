@@ -316,7 +316,7 @@
   constraints
 }
 
-#let subtasks(subtask_descriptions, index_start: 1) = {
+#let subtasks(subtask_descriptions, index_start: 0) = {
   let gen_gen = sys.inputs.at("gen_gen", default: "../gen/GEN");
   let gen_gen = read(gen_gen)
   let lines = gen_gen.split("\n");
