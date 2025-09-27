@@ -107,9 +107,16 @@
 #let solution = context [ == #localize(text.lang, "Solution") <solution> ]
 
 // Main show rule for statements
-#let statement(doc) = {
+#let statement(doc, title: none) = {
   show math.equation.where(block: false): it => box(it)
-  set text(size: 11pt, font: ("Latin Modern Roman",))
+  set text(
+    size: 11pt,
+    font: if ((context text.lang) != "ar") {
+      ("Latin Modern Roman",)
+    } else {
+      ("Sakkal Majalla,")
+    }
+  )
   // raw text defaults to 80% smaller, undo that.
   show raw: set text(size: 1.25em, font: ("Latin Modern Mono"))
   set par(justify: true)
@@ -132,7 +139,12 @@
 
   let task_yaml = yaml(sys.inputs.at("task_yaml", default: "../task.yaml"));
   let name = task_yaml.at("name", default: "noname");
-  let title = task_yaml.at("title", default: "No Name");
+  let title = if (title == none) [
+    #set text(dir: ltr)
+    #task_yaml.at("title", default: "No Name")
+  ] else {
+    title
+  };
   let time_limit = task_yaml.at("time_limit", default: 0);
   let memory_limit = task_yaml.at("memory_limit", default: 0);
   let syllabus = task_yaml.at(
@@ -190,15 +202,23 @@
   pagebreak(weak: true)
 
   if logo != none {
+    set text(dir: ltr)
     grid(columns: 2, rows: (50pt), image(logo), header_text,
       column-gutter: 5pt,
       align: horizon
     )
   } else {
+    set text(dir: ltr)
     block(height: 50pt, header_text)
   }
 
-  heading([ #title (#raw(name)) ])
+  heading([
+    #title
+    #[
+      #set text(dir: ltr)
+      (#raw(name))
+    ]
+  ])
 
   if show_summary {
     summary_text
@@ -210,7 +230,14 @@
 // Main show rule for editorials
 #let editorial(doc) = {
   show math.equation.where(block: false): it => box(it)
-  set text(size: 11pt, font: ("Latin Modern Roman",))
+  set text(
+    size: 11pt,
+    font: if ((context text.lang) != "ar") {
+      ("Latin Modern Roman",)
+    } else {
+      ("Sakkal Majalla,")
+    }
+  )
   // raw text defaults to 80% smaller, undo that.
   show raw: set text(size: 1.25em, font: ("Latin Modern Mono"))
   set par(justify: true)
@@ -423,7 +450,16 @@
 }
 
 #let note(content) = {
-  template_box(luma(123), none, text(size: 1.7em, sym.arrow.r.stroked), content)
+  template_box(
+    luma(123),
+    none,
+    text(size: 1.7em, if ((context text.dir) == ltr) {
+      sym.arrow.r.stroked
+    } else {
+      sym.arrow.l.stroked
+    }),
+    content
+  )
 }
 
 #let warn(content) = {
@@ -443,6 +479,7 @@
 }
 
 #let signatures(language_signatures) = {
+  set text(dir: ltr)
   let lang_name = (
     "c": "C",
     "cpp": "C++",
@@ -469,6 +506,7 @@
   context [== #localize(text.lang, "Examples") <examples>]
 
   let name = yaml("../task.yaml").name;
+  set text(dir: ltr)
 
   table(
     columns: (1fr, 1fr), 
@@ -496,6 +534,7 @@
   context [== #localize(text.lang, "Examples") <examples>]
 
   let name = yaml("../task.yaml").name;
+  set text(dir: ltr)
 
   for i in array.range(num) {
     let file = name + ".interaction" + str(i) + ".txt";
