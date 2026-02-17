@@ -12,7 +12,7 @@
   "Implementation": "التنفيذ",
   "Scoring": "توزيع الدرجات",
   "Constraints": "القيود",
-  "points": "نقاط",
+  "points": n => "نقاط",
   "IntentionallyBlankPage": "صفحة فارغة عمداً",
   "seconds": "ثواني",
   "SampleGrader": "مقيّم العينة",

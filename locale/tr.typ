@@ -12,7 +12,7 @@
   "Implementation": "Implementasyon",
   "Scoring": "Puanlama",
   "Constraints": "Kısıtlamalar",
-  "points": "puan",
+  "points": n => "puan",
   "IntentionallyBlankPage": "kasıtlı olarak boş bırakılmış sayfa",
   "seconds": "saniye",
   "SampleGrader": "Örnek Değerlendirici",

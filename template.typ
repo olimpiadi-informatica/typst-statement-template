@@ -16,7 +16,7 @@
   "Implementation": "Implementazione",
   "Scoring": "Assegnazione del punteggio",
   "Constraints": "Assunzioni",
-  "points": "punti",
+  "points": n => if n == 1 { "punto" } else { "punti" },
   "IntentionallyBlankPage": "pagina intenzionalmente vuota",
   "seconds": "secondi",
   "SampleGrader": "Grader di prova",
@@ -37,7 +37,7 @@
   "Implementation": "Implementation",
   "Scoring": "Scoring",
   "Constraints": "Constraints",
-  "points": "points",
+  "points": n => if n == 1 { "point" } else { "points" },
   "IntentionallyBlankPage": "This page is intentionally left blank",
   "seconds": "seconds",
   "SampleGrader": "Sample Grader",
@@ -359,6 +359,12 @@
       })
       .sorted()
       .last()
+    let max_points_len = subtask_scores
+      .map(score => {
+        measure(strong(localize(text.lang, "points")(score))).width
+      })
+      .sorted()
+      .last()
     let subtasks = array
       .zip(
         constraint.subtask.slice(1),
@@ -376,10 +382,9 @@
         let stidx = box(width: max_subtask_idx_len, [#{
           st(index + index_start)
         }])
-        let score = [#box(width: max_subtask_score_len, [#h(
-              1fr,
-            ) #score]) #localize(text.lang, "points")]
-        let subtask_intro = [#stidx [#score]]
+        let score_content = [#box(width: max_subtask_score_len, [#h(1fr) #score])]
+        let points = [#box(width: max_points_len, [#localize(text.lang, "points")(score)])]
+        let subtask_intro = [#stidx [#score_content #points]]
         (subtask_intro, description)
       })
     let max_intro_len = subtasks
@@ -428,7 +433,7 @@
         }
         let description = desc(cnst)
         let stidx = [#st(index + index_start)]
-        let score = [(#score #localize(text.lang, "points"))]
+        let score = [(#score #localize(text.lang, "points")(score))]
         let subtask_intro = [*#stidx* #score]
         (subtask_intro, description)
       })
@@ -437,7 +442,7 @@
     ) {
       [
         - #grid(
-            columns: (1fr, 2.2fr),
+            columns: (1fr, 1.9fr),
             rows: (1em, 1.6em),
             [#intro],
             grid.cell(

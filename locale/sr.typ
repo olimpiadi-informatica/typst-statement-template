@@ -12,7 +12,7 @@
   "Implementation": "Имплементација",
   "Scoring": "Бодовање",
   "Constraints": "Ограничења",
-  "points": "поена",
+  "points": n => "поена",
   "IntentionallyBlankPage": "намерно празна страница",
   "seconds": "секунде",
   "SampleGrader": "Пример грејдера",

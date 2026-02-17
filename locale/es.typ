@@ -12,7 +12,7 @@
   "Implementation": "Implementación",
   "Scoring": "Puntuación",
   "Constraints": "Restricciones",
-  "points": "puntos",
+  "points": n => "puntos",
   "IntentionallyBlankPage": "página intencionalmente en blanco",
   "seconds": "segundos",
   "SampleGrader": "Sample Grader",

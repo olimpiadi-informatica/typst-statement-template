@@ -12,7 +12,7 @@
   "Implementation": "Implementáció",
   "Scoring": "Pontozás",
   "Constraints": "Korlátok",
-  "points": "pont",
+  "points": n => "pont",
   "IntentionallyBlankPage": "Ez az oldal szándékosan maradt üresen",
   "seconds": "másodperc",
   "SampleGrader": "Minta Értékelő",

@@ -12,7 +12,7 @@
   "Implementation": "Implementaziun",
   "Scoring": "Punctaziun",
   "Constraints": "Cundiziuns",
-  "points": "puncts",
+  "points": n => "puncts",
   "IntentionallyBlankPage": "pagina intenziunadamain vida",
   "seconds": "secundas",
   "SampleGrader": "Grader da prova",

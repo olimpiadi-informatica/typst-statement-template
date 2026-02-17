@@ -12,7 +12,7 @@
   "Implementation": "Implementacija",
   "Scoring": "Bodovanje",
   "Constraints": "Ograničenja",
-  "points": "bodova",
+  "points": n => "bodova",
   "IntentionallyBlankPage": "namjerno prazna stranica",
   "seconds": "sekunde",
   "SampleGrader": "Primjer gradera",

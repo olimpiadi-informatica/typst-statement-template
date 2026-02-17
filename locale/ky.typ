@@ -12,7 +12,7 @@
   "Implementation": "Ишке ашыруу",
   "Scoring": "Баалоо",
   "Constraints": "Чектөөлөр",
-  "points": "упай",
+  "points": n => "упай",
   "IntentionallyBlankPage": "атайылап бош калтырылган барак",
   "seconds": "секунд",
   "SampleGrader": "Үлгү грейдер",

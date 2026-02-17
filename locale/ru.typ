@@ -12,7 +12,7 @@
   "Implementation": "Реализация",
   "Scoring": "Система оценки",
   "Constraints": "Ограничения",
-  "points": "баллов",
+  "points": n => "баллов",
   "IntentionallyBlankPage": "страница намеренно оставлена пустой",
   "seconds": "секунды",
   "SampleGrader": "Пример грейдера",

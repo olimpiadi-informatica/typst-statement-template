@@ -12,7 +12,7 @@
   "Implementation": "Implementimi",
   "Scoring": "Pikëzimi",
   "Constraints": "Kufizimet",
-  "points": "pikë",
+  "points": n => "pikë",
   "IntentionallyBlankPage": "faqe e lënë bosh qëllimisht",
   "seconds": "sekonda",
   "SampleGrader": "Grader shembull",

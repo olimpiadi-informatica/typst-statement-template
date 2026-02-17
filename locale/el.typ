@@ -12,7 +12,7 @@
   "Implementation": "Υλοποίηση",
   "Scoring": "Βαθμολογία",
   "Constraints": "Περιορισμοί",
-  "points": "πόντοι",
+  "points": n => "πόντοι",
   "IntentionallyBlankPage": "σκοπίμως κενή σελίδα",
   "seconds": "δευτερόλεπτα",
   "SampleGrader": "Δείγμα grader",

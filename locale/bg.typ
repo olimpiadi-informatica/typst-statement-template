@@ -12,7 +12,7 @@
   "Implementation": "Имплементация",
   "Scoring": "Оценяване",
   "Constraints": "Ограничения",
-  "points": "точки",
+  "points": n => "точки",
   "IntentionallyBlankPage": "нарочно празна страница",
   "seconds": "секунди",
   "SampleGrader": "Примерен грейдър",

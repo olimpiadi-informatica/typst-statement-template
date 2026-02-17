@@ -12,7 +12,7 @@
   "Implementation": "Implementare",
   "Scoring": "Punctaj",
   "Constraints": "Constrângeri",
-  "points": "puncte",
+  "points": n => "puncte",
   "IntentionallyBlankPage": "pagină goală intenționat",
   "seconds": "secunde",
   "SampleGrader": "Grader de probă",

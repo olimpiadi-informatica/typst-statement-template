@@ -12,7 +12,7 @@
   "Implementation": "Implementacija",
   "Scoring": "Točkovanje",
   "Constraints": "Omejitve",
-  "points": "točk",
+  "points": n => "točk",
   "IntentionallyBlankPage": "namerno prazna stran",
   "seconds": "sekunde",
   "SampleGrader": "Primer ocenjevalnika",

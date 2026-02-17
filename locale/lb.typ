@@ -12,7 +12,7 @@
   "Implementation": "Implementéirung",
   "Scoring": "Punkteverdeelung",
   "Constraints": "Contrainten",
-  "points": "Punkten",
+  "points": n => "Punkten",
   "IntentionallyBlankPage": "Dës Säit ass absichtlech wäiss",
   "seconds": "Sekunden",
   "SampleGrader": "Beispill-Grader",

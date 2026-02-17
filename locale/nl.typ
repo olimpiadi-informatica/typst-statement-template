@@ -12,7 +12,7 @@
   "Implementation": "Implementatie",
   "Scoring": "Scoring",
   "Constraints": "Randvoorwaarden",
-  "points": "punten",
+  "points": n => "punten",
   "IntentionallyBlankPage": "Deze pagina is bewust leeg",
   "seconds": "seconden",
   "SampleGrader": "Voorbeeld Grader",

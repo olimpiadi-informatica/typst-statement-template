@@ -12,7 +12,7 @@
   "Implementation": "Реалізація",
   "Scoring": "Оцінювання",
   "Constraints": "Обмеження",
-  "points": "балів",
+  "points": n => "балів",
   "IntentionallyBlankPage": "сторінка навмисно залишена порожньою",
   "seconds": "секунди",
   "SampleGrader": "Приклад грейдера",
