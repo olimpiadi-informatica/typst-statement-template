@@ -298,6 +298,7 @@
     )
     let constraints = yaml(constraints_yaml)
     constraints.subtask = constraints.subtask.slice(1)
+    constraints
   }
 
   for (name, constraint) in constraints.pairs() {
