@@ -333,7 +333,7 @@
       .map(l => int(l.slice(5).trim()))
     assert.eq(
       scores.len(),
-      constraint.subtask.len() - 1,
+      constraint.subtask.len(),
     )
     scores
   }
