@@ -296,7 +296,8 @@
       "constraints_yaml",
       default: "../gen/constraints.yaml",
     )
-    yaml(constraints_yaml)
+    let constraints = yaml(constraints_yaml)
+    constraints.subtask = constraints.subtask.slice(1)
   }
 
   for (name, constraint) in constraints.pairs() {
@@ -367,7 +368,7 @@
       .last()
     let subtasks = array
       .zip(
-        constraint.subtask.slice(1),
+        constraint.subtask,
         subtask_scores,
         subtask_descriptions,
         indices,
@@ -420,7 +421,7 @@
 
     let subtasks = array
       .zip(
-        constraint.subtask.slice(1),
+        constraint.subtask,
         subtask_scores,
         subtask_descriptions,
         indices,
