@@ -1,6 +1,81 @@
 #import "@preview/unify:0.7.0": *
+#import "@preview/text-dirr:1.0.0": text-dir
 
 #let override_localization = state("locale_override", (:))
+
+#let get_locale(lang: none, region: none) = {
+  let lang = if lang != none { lang } else { text.lang }
+  let region = if region != none { region } else { text.region }
+
+  if lang == "zh" {
+    if region in ("TW", "HK", "MO") {
+      "zh-" + lower(region)
+    } else {
+      "zh-cn"
+    }
+  } else {
+    lang
+  }
+}
+
+#let get_font(locale) = {
+  let fonts = (
+    "ar": "Sakkal Majalla",
+    "fa": "Sakkal Majalla",
+    "zh-cn": "Noto Serif CJK SC",
+    "zh-tw": "Noto Serif CJK TC",
+    "ja": "Noto Serif CJK JP",
+    "ko": "Noto Serif CJK KR",
+    "hi": "Noto Serif Devanagari",
+    "bn": "Noto Serif Bengali",
+    "th": "Noto Serif Thai",
+    "he": "Noto Serif Hebrew",
+    "hy": "Noto Serif Armenian",
+    "ka": "Noto Serif Georgian",
+    "si": "Noto Serif Sinhala",
+    "ta": "Noto Serif Tamil",
+  )
+  if locale in fonts {
+    (fonts.at(locale), "Latin Modern Roman")
+  } else {
+    ("Latin Modern Roman",)
+  }
+}
+
+#let apply_font_rules(doc) = {
+  show text: it => {
+    let lang = it.at("lang", default: none)
+    if lang == none { return it }
+    let region = it.at("region", default: none)
+    let locale = get_locale(lang: lang, region: region)
+
+    // Only apply font if it's one of the special languages
+    let fonts = (
+      "ar": "Sakkal Majalla",
+      "fa": "Sakkal Majalla",
+      "zh-cn": "Noto Serif CJK SC",
+      "zh-tw": "Noto Serif CJK TC",
+      "ja": "Noto Serif CJK JP",
+      "ko": "Noto Serif CJK KR",
+      "hi": "Noto Serif Devanagari",
+      "bn": "Noto Serif Bengali",
+      "th": "Noto Serif Thai",
+      "he": "Noto Serif Hebrew",
+      "hy": "Noto Serif Armenian",
+      "ka": "Noto Serif Georgian",
+      "si": "Noto Serif Sinhala",
+      "ta": "Noto Serif Tamil",
+    )
+
+    if locale in fonts {
+      set text(font: (fonts.at(locale), "Latin Modern Roman"))
+      it
+    } else {
+      it
+    }
+  }
+  doc
+}
 
 #let localization_it = (
   "Solution": "Soluzione",
@@ -47,16 +122,17 @@
 // Section names, with translations
 #let localize(lang, string) = {
   let override = override_localization.get()
+  let locale = get_locale(lang: lang)
   if (
     type(override) == dictionary and override.at(string, default: none) != none
   ) {
     override.at(string)
-  } else if lang == "it" {
+  } else if locale == "it" {
     localization_it.at(string)
-  } else if lang == "en" {
+  } else if locale == "en" {
     localization_en.at(string)
   } else {
-    import "locale/" + lang + ".typ": localization
+    import "locale/" + locale + ".typ": localization
     localization.at(string)
   }
 }
@@ -83,14 +159,12 @@
 // Main show rule for statements
 #let statement(doc, title: none) = {
   show math.equation.where(block: false): it => box(it)
-  set text(
-    size: 11pt,
-    font: if ((context text.lang) != "ar") {
-      ("Latin Modern Roman",)
-    } else {
-      "Sakkal Majalla,"
-    },
-  )
+  set text(size: 11pt)
+  show: apply_font_rules
+  show: it => context {
+    set text(font: get_font(get_locale()))
+    it
+  }
   // raw text defaults to 80% smaller, undo that.
   show raw: set text(size: 1.25em, font: "Latin Modern Mono")
   set par(justify: true)
@@ -155,7 +229,7 @@
       }
     }
     #h(1fr) #strong(raw(name)) #h(3pt) #sym.circle.filled #h(3pt) #strong(raw(
-      upper(text.lang),
+      upper(get_locale()),
     ))
   ]
 
@@ -212,14 +286,12 @@
 // Main show rule for editorials
 #let editorial(doc) = {
   show math.equation.where(block: false): it => box(it)
-  set text(
-    size: 11pt,
-    font: if ((context text.lang) != "ar") {
-      ("Latin Modern Roman",)
-    } else {
-      "Sakkal Majalla,"
-    },
-  )
+  set text(size: 11pt)
+  show: apply_font_rules
+  show: it => context {
+    set text(font: get_font(get_locale()))
+    it
+  }
   // raw text defaults to 80% smaller, undo that.
   show raw: set text(size: 1.25em, font: "Latin Modern Mono")
   set par(justify: true)
@@ -384,8 +456,13 @@
         let stidx = box(width: max_subtask_idx_len, [#{
           st(index + index_start)
         }])
-        let score_content = [#box(width: max_subtask_score_len, [#h(1fr) #score])]
-        let points = [#box(width: max_points_len, [#localize(text.lang, "points")(score)])]
+        let score_content = [#box(width: max_subtask_score_len, [#h(
+            1fr,
+          ) #score])]
+        let points = [#box(width: max_points_len, [#localize(
+          text.lang,
+          "points",
+        )(score)])]
         let subtask_intro = [#stidx [#score_content #points]]
         (subtask_intro, description)
       })
@@ -487,7 +564,7 @@
   template_box(
     luma(123),
     none,
-    text(size: 1.7em, if ((context text.dir) != rtl) {
+    text(size: 1.7em, context if (text-dir() == ltr) {
       sym.arrow.r.stroked
     } else {
       sym.arrow.l.stroked
@@ -504,6 +581,7 @@
       width: 2em,
       height: 2em,
       [
+        #set text(lang: "en", font: "Latin Modern Roman")
         #place(horizon + center, dy: 0.1em, text(size: 1.5em, [*!*]))
         #place(horizon + center, dy: -0.6em, text(
           size: 5em,

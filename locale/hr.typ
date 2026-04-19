@@ -7,14 +7,16 @@
   "MemoryLimit": "Memorijsko ograničenje",
   "stdin": "standardni ulaz",
   "stdout": "standardni izlaz",
-  "Examples": "Primjeri ulaza/izlaza",
+  "Examples": "Primjeri",
   "Explanation": "Objašnjenje",
   "Implementation": "Implementacija",
   "Scoring": "Bodovanje",
   "Constraints": "Ograničenja",
-  "points": n => "bodova",
-  "IntentionallyBlankPage": "namjerno prazna stranica",
-  "seconds": "sekunde",
+  "points": n => if n == 1 { "bod" } else if n >= 2 and n <= 4 { "boda" } else {
+    "bodova"
+  },
+  "IntentionallyBlankPage": "Ova stranica je namjerno ostavljena prazna",
+  "seconds": "sekundi",
   "SampleGrader": "Primjer gradera",
   "Grader": "Grader",
 )
