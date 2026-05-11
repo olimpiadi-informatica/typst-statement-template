@@ -12,16 +12,18 @@
   "Implementation": "Implementacja",
   "Scoring": "Punktacja",
   "Constraints": "Ograniczenia",
-  "points": n =>
-    if n == 1 {
-      "punkt"
+  "points": n => if n == 1 {
+    "punkt"
+  } else {
+    if (
+      (calc.rem(n, 10) > 1 and calc.rem(n, 10) < 5)
+        and not (10 <= calc.rem(n, 100) and calc.rem(n, 100) < 20)
+    ) {
+      "punkty"
     } else {
-      if (calc.rem(n, 10) > 1 and calc.rem(n, 10) < 5) and not (10 <= calc.rem(n, 100) and calc.rem(n, 100) < 20) {
-        "punkty"
-      } else {
-        "punktów"
-      }
-    },
+      "punktów"
+    }
+  },
   "IntentionallyBlankPage": "Ta strona została celowo pozostawiona pusta",
   "seconds": "sekundy",
   "SampleGrader": "Przykładowa sprawdzaczka",
