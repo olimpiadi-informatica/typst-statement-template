@@ -1,6 +1,6 @@
 #let localization = (
   "Solution": "Solution",
-  "PageXofY": (count, total) => "Page  " + str(count) + " de " + str(total),
+  "PageXofY": (count, total) => "Page " + str(count) + " sur " + str(total),
   "Subtask": it => "Sous-tâche " + str(it),
   "Day": it => "Jour " + str(it),
   "TimeLimit": "Limite de temps",
@@ -12,9 +12,9 @@
   "Implementation": "Implémentation",
   "Scoring": "Score",
   "Constraints": "Contraintes",
-  "points": n => "points",
+  "points": n => if n == 1 { "point" } else { "points" },
   "IntentionallyBlankPage": "Cette page est intentionnellement laissée vide",
   "seconds": "secondes",
-  "SampleGrader": "Évaluateur",
+  "SampleGrader": "Évaluateur d'exemple",
   "Grader": "Évaluateur",
 )
