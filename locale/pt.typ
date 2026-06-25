@@ -15,6 +15,6 @@
   "points": n => "pontos",
   "IntentionallyBlankPage": "Esta página foi intencionalmente deixada em branco",
   "seconds": "segundos",
-  "SampleGrader": "Avaliador Padrão",
+  "SampleGrader": "Avaliador de Exemplo",
   "Grader": "Avaliador",
 )
