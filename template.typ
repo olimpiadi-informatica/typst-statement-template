@@ -648,10 +648,11 @@
     show raw.where(block: true): it => block(
       fill: luma(240),
       stroke: 1pt + luma(220),
-      inset: 8pt,
       width: 100%,
+      inset: 8pt,
       above: above_margin,
       below: below_margin,
+      breakable: false,
       it
     )
 
