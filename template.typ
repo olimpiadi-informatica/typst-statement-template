@@ -648,8 +648,16 @@
 
   if type(text) == str {
     raw(text, block: true)
+  } else if type(text) == array {
+    raw(text.map(item => str(item)).join("\n"), block: true)
+  } else if type(text) == content and text.func() == raw {
+    if text.block {
+      text
+    } else {
+      raw(text.text, block: true)
+    }
   } else {
-    raw(text.join("\n"), block: true)
+    panic("rawblock: paramater has invalid type `" + str(type(text)) + "`")
   }
 }
 
