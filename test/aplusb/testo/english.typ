@@ -51,12 +51,25 @@ Among this task’s attachments you will find a simplified version of the grader
 which you can use to test your solutions locally. The sample grader reads data from #raw(infile),
 calls the function `sum` and writes back on #raw(outfile) using the following format.
 
-The input file is formed by $2$ lines, containing:
+/* Input and output format blocks. Can be a string, raw block, or an array */
 
-- Line $1$: an integer $A$.
-- Line $2$: an integer $B$.
+#inputformat("A B")
 
-The output file is formed by a single line, containing the value returned by the function `sum`.
+#outputformat("S")
+
+Where $S$ is the value returned by the function `sum`.
+
+/* The following produces the same result:
+ *
+ * #inputformat(```
+ * A B
+ * ```)
+ *
+ * #outputformat((
+ *   "S",
+ * ))
+ *
+ */
 
 #constraints
 - $0 <= A, B <= constraint.MAXA$
@@ -94,7 +107,7 @@ In the *first sample case*, we are asked to compute $1+3=4$.\
 In the *second sample case*, we are asked to compute $2+5=7$.\
 ]
 
-/* Editorial content block - can be omitted 
+/* Editorial content block - can be omitted
  * Compile with `task-maker-tools booklet --booklet-solutions`
  */
 #editorial[
