@@ -637,40 +637,56 @@
   }
 }
 
-#let rawblock(text) = {
+#let ioformat(format) = {
+  let below_margin = auto
+
+  if type(format) == str or type(format) == content and format.func() == raw and not format.block {
+    below_margin = 6pt
+  }
+
   show raw.where(block: true): it => block(
     fill: luma(240),
     stroke: 1pt + luma(220),
-    inset: 12pt,
+    inset: 8pt,
     width: 100%,
+    above: 8pt,
+    below: below_margin,
     it
   )
 
-  if type(text) == str {
-    raw(text, block: true)
-  } else if type(text) == array {
-    raw(text.map(item => str(item)).join("\n"), block: true)
-  } else if type(text) == content and text.func() == raw {
-    if text.block {
-      text
+  if type(format) == str {
+    raw(format, block: true)
+  } else if type(format) == array {
+    raw(format.map(line => str(line)).join("\n"), block: true)
+  } else if type(format) == content and format.func() == raw {
+    if format.block {
+      format
     } else {
-      raw(text.text, block: true)
+      raw(format.text, block: true)
     }
   } else {
-    panic("rawblock: paramater has invalid type `" + str(type(text)) + "`")
+    panic("ioformat: paramater has invalid type `" + str(type(format)) + "`")
   }
 }
 
-#let inputformat(format) = {
-  context [=== #localize(text.lang, "InputFormat"):]
+#let inputformat(..args) = {
+  context [ === #localize(text.lang, "InputFormat"):]
 
-  rawblock(format)
+  let pos_args = args.pos()
+
+  if pos_args.len() > 0 {
+    ioformat(pos_args.first())
+  }
 }
 
-#let outputformat(format) = {
-  context [=== #localize(text.lang, "OutputFormat"):]
+#let outputformat(..args) = {
+  context [ === #localize(text.lang, "OutputFormat"):]
 
-  rawblock(format)
+  let pos_args = args.pos()
+
+  if pos_args.len() > 0 {
+    ioformat(pos_args.first())
+  }
 }
 
 #let examples(num, infile: infile, outfile: outfile) = {

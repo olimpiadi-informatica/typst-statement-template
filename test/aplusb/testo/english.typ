@@ -61,7 +61,8 @@ Where $S$ is the value returned by the function `sum`.
 
 /* The following produces the same result:
  *
- * #inputformat(```
+ * #inputformat()
+ * #ioformat(```
  * A B
  * ```)
  *
