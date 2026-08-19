@@ -17,4 +17,6 @@
   "seconds": "வினாடிகள்",
   "SampleGrader": "Sample Grader",
   "Grader": "Grader",
+  "InputFormat": "உள்ளீட்டு வடிவம்",
+  "OutputFormat": "வெளியீட்டு வடிவம்",
 )

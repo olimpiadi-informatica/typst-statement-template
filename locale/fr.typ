@@ -17,4 +17,6 @@
   "seconds": "secondes",
   "SampleGrader": "Évaluateur d'exemple",
   "Grader": "Évaluateur",
+  "InputFormat": "Format d'entrée",
+  "OutputFormat": "Format de sortie",
 )

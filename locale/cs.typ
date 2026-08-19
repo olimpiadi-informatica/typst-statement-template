@@ -19,4 +19,6 @@
   "seconds": "sekund",
   "SampleGrader": "Ukázkový grader",
   "Grader": "Grader",
+  "InputFormat": "Vstupní formát",
+  "OutputFormat": "Výstupní formát",
 )

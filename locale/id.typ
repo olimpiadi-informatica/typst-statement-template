@@ -17,4 +17,6 @@
   "seconds": "detik",
   "SampleGrader": "Grader Contoh",
   "Grader": "Grader",
+  "InputFormat": "Format masukan",
+  "OutputFormat": "Format keluaran",
 )

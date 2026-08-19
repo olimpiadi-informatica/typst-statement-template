@@ -17,4 +17,6 @@
   "seconds": "секунд",
   "SampleGrader": "Үлгү грейдер",
   "Grader": "Грейдер",
+  "InputFormat": "Киргизүү форматы",
+  "OutputFormat": "Чыгаруу форматы",
 )

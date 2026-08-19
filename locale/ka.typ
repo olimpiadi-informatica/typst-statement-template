@@ -17,4 +17,6 @@
   "seconds": "წამի",
   "SampleGrader": "მაგალითი გრეიდერი",
   "Grader": "გრეიდერი",
+  "InputFormat": "შეყვანის ფორმატი",
+  "OutputFormat": "გამოყვანის ფორმატი",
 )

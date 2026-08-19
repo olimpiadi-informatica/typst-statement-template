@@ -17,4 +17,6 @@
   "seconds": "sekondes",
   "SampleGrader": "Voorbeeld-grader",
   "Grader": "Grader",
+  "InputFormat": "Invoerformaat",
+  "OutputFormat": "Uitvoerformaat",
 )

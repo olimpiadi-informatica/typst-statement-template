@@ -17,4 +17,6 @@
   "seconds": "Sekunden",
   "SampleGrader": "Beispielgrader",
   "Grader": "Grader",
+  "InputFormat": "Eingabeformat",
+  "OutputFormat": "Ausgabeformat",
 )

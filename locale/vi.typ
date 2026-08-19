@@ -17,4 +17,6 @@
   "seconds": "giây",
   "SampleGrader": "Sample Grader",
   "Grader": "Grader",
+  "InputFormat": "Định dạng đầu vào",
+  "OutputFormat": "Định dạng đầu ra",
 )

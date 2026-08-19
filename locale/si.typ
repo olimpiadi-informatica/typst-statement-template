@@ -17,4 +17,6 @@
   "seconds": "තත්පර",
   "SampleGrader": "Sample Grader",
   "Grader": "Grader",
+  "InputFormat": "ආදාන ආකෘතිය",
+  "OutputFormat": "ප්‍රතිදාන ආකෘතිය",
 )

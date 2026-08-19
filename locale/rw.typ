@@ -17,4 +17,6 @@
   "seconds": "amasegonda",
   "SampleGrader": "Sample Grader",
   "Grader": "Grader",
+  "InputFormat": "Format y'injira",
+  "OutputFormat": "Format y'isohoka",
 )

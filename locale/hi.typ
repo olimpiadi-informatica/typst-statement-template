@@ -17,4 +17,6 @@
   "seconds": "सेकंड",
   "SampleGrader": "सैंपल ग्रेडर",
   "Grader": "ग्रेडर",
+  "InputFormat": "इनपुट प्रारूप",
+  "OutputFormat": "आउटपुट प्रारूप",
 )

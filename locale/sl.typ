@@ -17,4 +17,6 @@
   "seconds": "sekunde",
   "SampleGrader": "Primer ocenjevalnika",
   "Grader": "Ocenjevalnik",
+  "InputFormat": "Vhodni format",
+  "OutputFormat": "Izhodni format",
 )

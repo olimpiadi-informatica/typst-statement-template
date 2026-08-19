@@ -17,4 +17,6 @@
   "seconds": "saniye",
   "SampleGrader": "Örnek Değerlendirici",
   "Grader": "Değerlendirici",
+  "InputFormat": "Girdi biçimi",
+  "OutputFormat": "Çıktı biçimi",
 )

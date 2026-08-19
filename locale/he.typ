@@ -17,4 +17,6 @@
   "seconds": "שניות",
   "SampleGrader": "גריידר לדוגמה",
   "Grader": "גריידר",
+  "InputFormat": "פורמט קלט",
+  "OutputFormat": "פורמט פלט",
 )

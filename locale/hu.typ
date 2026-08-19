@@ -17,4 +17,6 @@
   "seconds": "másodperc",
   "SampleGrader": "Minta Értékelő",
   "Grader": "Értékelő",
+  "InputFormat": "Bemeneti formátum",
+  "OutputFormat": "Kimeneti formátum",
 )

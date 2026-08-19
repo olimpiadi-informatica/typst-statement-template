@@ -17,4 +17,6 @@
   "seconds": "sekuntia",
   "SampleGrader": "Esimerkki-grader",
   "Grader": "Grader",
+  "InputFormat": "Syötteen muoto",
+  "OutputFormat": "Tulosteen muoto",
 )

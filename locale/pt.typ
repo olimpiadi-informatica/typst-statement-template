@@ -17,4 +17,6 @@
   "seconds": "segundos",
   "SampleGrader": "Avaliador de Exemplo",
   "Grader": "Avaliador",
+  "InputFormat": "Formato de entrada",
+  "OutputFormat": "Formato de saída",
 )

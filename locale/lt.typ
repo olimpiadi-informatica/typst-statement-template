@@ -24,4 +24,6 @@
   "seconds": "sekundės",
   "SampleGrader": "Pavyzdinis graderis",
   "Grader": "Graderis",
+  "InputFormat": "Įvesties formatas",
+  "OutputFormat": "Išvesties formatas",
 )

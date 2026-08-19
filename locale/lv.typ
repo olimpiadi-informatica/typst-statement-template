@@ -17,4 +17,6 @@
   "seconds": "sekundes",
   "SampleGrader": "Paraug-graders",
   "Grader": "Graders",
+  "InputFormat": "Ievades formāts",
+  "OutputFormat": "Izvades formāts",
 )

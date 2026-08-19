@@ -17,4 +17,6 @@
   "seconds": "segundo",
   "SampleGrader": "Sample Grader",
   "Grader": "Grader",
+  "InputFormat": "Format ng input",
+  "OutputFormat": "Format ng output",
 )

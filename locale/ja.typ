@@ -17,4 +17,6 @@
   "seconds": "秒",
   "SampleGrader": "採点プログラムの例",
   "Grader": "採点プログラム",
+  "InputFormat": "入力形式",
+  "OutputFormat": "出力形式",
 )

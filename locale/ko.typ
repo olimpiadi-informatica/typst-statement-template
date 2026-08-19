@@ -17,4 +17,6 @@
   "seconds": "초",
   "SampleGrader": "예제 그레이더",
   "Grader": "그레이더",
+  "InputFormat": "입력 형식",
+  "OutputFormat": "출력 형식",
 )

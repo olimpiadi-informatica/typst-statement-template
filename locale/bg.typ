@@ -17,4 +17,6 @@
   "seconds": "секунди",
   "SampleGrader": "Примерен грейдър",
   "Grader": "Грейдър",
+  "InputFormat": "Входни данни",
+  "OutputFormat": "Изходни данни",
 )

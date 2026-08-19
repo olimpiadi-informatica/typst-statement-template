@@ -17,4 +17,6 @@
   "seconds": "ثانیه",
   "SampleGrader": "گریدر نمونه",
   "Grader": "گریدر",
+  "InputFormat": "فرمت ورودی",
+  "OutputFormat": "فرمت خروجی",
 )

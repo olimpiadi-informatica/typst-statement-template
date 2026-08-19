@@ -17,4 +17,6 @@
   "seconds": "վայրկյան",
   "SampleGrader": "Sample Grader",
   "Grader": "Grader",
+  "InputFormat": "Մուտքային ձևաչափ",
+  "OutputFormat": "Ելքային ձևաչափ",
 )

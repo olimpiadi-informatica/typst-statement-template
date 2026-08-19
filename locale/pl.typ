@@ -28,4 +28,6 @@
   "seconds": "sekundy",
   "SampleGrader": "Przykładowa sprawdzaczka",
   "Grader": "Sprawdzaczka",
+  "InputFormat": "Format wejściowy",
+  "OutputFormat": "Format wyjściowy",
 )

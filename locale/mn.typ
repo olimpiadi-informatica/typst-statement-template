@@ -17,4 +17,6 @@
   "seconds": "секунд",
   "SampleGrader": "Жишээ грейдер",
   "Grader": "Грейдер",
+  "InputFormat": "Оролтын формат",
+  "OutputFormat": "Гаралтын формат",
 )

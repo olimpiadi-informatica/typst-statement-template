@@ -17,4 +17,6 @@
   "seconds": "วินาที",
   "SampleGrader": "ตัวอย่างเกรดเดอร์",
   "Grader": "เกรดเดอร์",
+  "InputFormat": "รูปแบบข้อมูลเข้า",
+  "OutputFormat": "รูปแบบข้อมูลออก",
 )

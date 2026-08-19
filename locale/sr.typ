@@ -17,4 +17,6 @@
   "seconds": "секунде",
   "SampleGrader": "Пример грејдера",
   "Grader": "Грејдер",
+  "InputFormat": "Улазни формат",
+  "OutputFormat": "Излазни формат",
 )

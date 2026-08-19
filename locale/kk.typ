@@ -17,4 +17,6 @@
   "seconds": "секунд",
   "SampleGrader": "Мысал грейдер",
   "Grader": "Грейдер",
+  "InputFormat": "Кіріс пішімі",
+  "OutputFormat": "Шығыс пішімі",
 )

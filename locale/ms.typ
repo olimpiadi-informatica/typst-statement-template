@@ -19,4 +19,6 @@
   "seconds": "saat",
   "SampleGrader": "Contoh Grader",
   "Grader": "Grader",
+  "InputFormat": "Format input",
+  "OutputFormat": "Format output",
 )

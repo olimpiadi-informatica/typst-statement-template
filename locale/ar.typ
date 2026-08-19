@@ -17,4 +17,6 @@
   "seconds": "ثواني",
   "SampleGrader": "مقيّم العينة",
   "Grader": "مقيّم",
+  "InputFormat": "تنسيق الإدخال",
+  "OutputFormat": "تنسيق الإخراج",
 )

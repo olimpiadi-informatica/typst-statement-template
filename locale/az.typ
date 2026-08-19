@@ -17,4 +17,6 @@
   "seconds": "saniyə",
   "SampleGrader": "Nümunə Qreyder",
   "Grader": "Qreyder",
+  "InputFormat": "Giriş formatı",
+  "OutputFormat": "Çıxış formatı",
 )

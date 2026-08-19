@@ -17,4 +17,6 @@
   "seconds": "secundas",
   "SampleGrader": "Grader da prova",
   "Grader": "Grader",
+  "InputFormat": "Format da entrada",
+  "OutputFormat": "Format da sortida",
 )

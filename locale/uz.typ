@@ -17,4 +17,6 @@
   "seconds": "soniya",
   "SampleGrader": "Namuna grader",
   "Grader": "Grader",
+  "InputFormat": "Kirish formati",
+  "OutputFormat": "Chiqish formati",
 )

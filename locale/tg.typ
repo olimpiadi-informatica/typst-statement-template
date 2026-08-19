@@ -17,4 +17,6 @@
   "seconds": "сония",
   "SampleGrader": "Грейдери намунавӣ",
   "Grader": "Грейдер",
+  "InputFormat": "Формати вуруд",
+  "OutputFormat": "Формати баромад",
 )

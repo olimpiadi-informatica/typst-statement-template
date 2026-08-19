@@ -19,4 +19,6 @@
   "seconds": "sekundi",
   "SampleGrader": "Primjer gradera",
   "Grader": "Grader",
+  "InputFormat": "Ulazni format",
+  "OutputFormat": "Izlazni format",
 )

@@ -17,4 +17,6 @@
   "seconds": "sekúndur",
   "SampleGrader": "Sýnishorn af grader",
   "Grader": "Grader",
+  "InputFormat": "Inntakssnið",
+  "OutputFormat": "Úttakssnið",
 )

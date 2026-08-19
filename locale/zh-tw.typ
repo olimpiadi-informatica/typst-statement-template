@@ -19,4 +19,6 @@
   "seconds": "秒",
   "SampleGrader": "示例評測程序",
   "Grader": "評測程序",
+  "InputFormat": "輸入格式",
+  "OutputFormat": "輸出格式",
 )

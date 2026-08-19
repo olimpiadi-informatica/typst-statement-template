@@ -17,4 +17,6 @@
   "seconds": "δευτερόλεπτα",
   "SampleGrader": "Δείγμα grader",
   "Grader": "Grader",
+  "InputFormat": "Μορφή εισόδου",
+  "OutputFormat": "Μορφή εξόδου",
 )

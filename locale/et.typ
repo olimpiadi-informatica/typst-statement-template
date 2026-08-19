@@ -17,4 +17,6 @@
   "seconds": "sekundit",
   "SampleGrader": "Näidis-grader",
   "Grader": "Grader",
+  "InputFormat": "Sisendvorming",
+  "OutputFormat": "Väljundvorming",
 )

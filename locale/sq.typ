@@ -17,4 +17,6 @@
   "seconds": "sekonda",
   "SampleGrader": "Grader shembull",
   "Grader": "Grader",
+  "InputFormat": "Formati i hyrjes",
+  "OutputFormat": "Formati i daljes",
 )

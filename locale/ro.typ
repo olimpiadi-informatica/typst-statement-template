@@ -17,4 +17,6 @@
   "seconds": "secunde",
   "SampleGrader": "Grader de probă",
   "Grader": "Grader",
+  "InputFormat": "Formatul de intrare",
+  "OutputFormat": "Formatul de ieșire",
 )

@@ -17,4 +17,6 @@
   "seconds": "sekunt",
   "SampleGrader": "Nusga grader",
   "Grader": "Grader",
+  "InputFormat": "Giriş formaty",
+  "OutputFormat": "Çykyş formaty",
 )

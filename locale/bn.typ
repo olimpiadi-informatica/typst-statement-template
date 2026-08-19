@@ -17,4 +17,6 @@
   "seconds": "সেকেন্ড",
   "SampleGrader": "স্যাম্পল গ্রেডার",
   "Grader": "গ্রেডার",
+  "InputFormat": "ইনপুট ফরম্যাট",
+  "OutputFormat": "আউটপুট ফরম্যাট",
 )
