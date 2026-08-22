@@ -550,16 +550,17 @@
 
 #let template_box(stroke_color, background_color, icon, content) = {
   block(
+    width: 100%,
     stroke: 2pt + stroke_color,
     fill: background_color,
-    inset: 8pt,
     radius: 2pt,
+    inset: (left: 12pt, right: 8pt, y: 8pt),
     grid(
-      columns: (0pt, 20pt, 1fr),
+      columns: (5%, auto),
+      column-gutter: 10pt,
       rows: 1,
-      column-gutter: (5pt, 10pt),
-      align: (auto, horizon + center, horizon),
-      [], icon, content,
+      align: (horizon + center, left + horizon),
+      icon, content,
     ),
   )
 }
@@ -568,11 +569,15 @@
   template_box(
     luma(123),
     none,
-    text(size: 1.7em, context if (text-dir() == ltr) {
-      sym.arrow.r.stroked
-    } else {
-      sym.arrow.l.stroked
-    }),
+    box(
+      width: 2em,
+      height: 2em,
+      place(center + horizon, dy: -0.3em, text(size: 1.8em, context if (text-dir() == ltr) {
+        emoji.finger.r
+      } else {
+        emoji.finger.l
+      }))
+    ),
     content,
   )
 }
@@ -581,15 +586,13 @@
   template_box(
     orange,
     rgb(255, 0, 0, 50),
-    block(
+    box(
       width: 2em,
       height: 2em,
       [
-        #set text(lang: "en", font: "Latin Modern Roman")
-        #place(horizon + center, dy: 0.1em, text(size: 1.5em, [*!*]))
-        #place(horizon + center, dy: -0.6em, text(
-          size: 5em,
-          sym.triangle.t.stroked,
+        #place(horizon + center, dy: -0.3em, text(
+          size: 2.5em,
+          emoji.warning
         ))
       ],
     ),
