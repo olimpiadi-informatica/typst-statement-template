@@ -764,16 +764,22 @@
             fill: luma(250),
             raw(l.join("\n")),
           )
-          let pat-col = luma(245)
+          let pat-col1 = luma(245)
           let pat-col2 = luma(255)
           let pat = tiling(
             size: (15pt, 15pt),
             relative: "parent",
-            rect(
-              fill: gradient
-                .linear(angle: 45deg, pat-col, pat-col2, pat-col, pat-col2)
-                .sharp(4),
-            ),
+            {
+              place(rect(width: 100%, height: 100%, fill: pat-col1))
+              place(polygon(
+                fill: pat-col2,
+                (0pt, 7.5pt), (7.5pt, 0pt), (15pt, 0pt), (0pt, 15pt),
+              ))
+              place(polygon(
+                fill: pat-col2,
+                (15pt, 7.5pt), (7.5pt, 15pt), (15pt, 15pt),
+              ))
+            }
           )
           let placeholder = table.cell(fill: pat, [])
           if is_input {
