@@ -141,27 +141,76 @@
   }
 }
 
+#let task_name = yaml(sys.inputs.at("task_yaml", default: "../task.yaml")).at(
+  "name",
+  default: "",
+)
+
+#let task_label(name) = if task_name != "" {
+  label(task_name + "-" + name)
+} else {
+  label(name)
+}
+
 #let implementation = context [ == #localize(
   text.lang,
   "Implementation",
-) <implementation> ]
+) #task_label("implementation") ]
 #let samplegrader = context [ == #localize(
   text.lang,
   "SampleGrader",
-) <samplegrader> ]
+) #task_label("samplegrader") ]
 #let constraints = context [ == #localize(
   text.lang,
   "Constraints",
-) <constraint> ]
-#let scoring = context [ == #localize(text.lang, "Scoring") <scoring> ]
+) #task_label("constraints") ]
+#let scoring = context [ == #localize(text.lang, "Scoring") #task_label("scoring") ]
 #let explanation = context [ == #localize(
   text.lang,
   "Explanation",
-) <explanation> ]
-#let solution = context [ == #localize(text.lang, "Solution") <solution> ]
+) #task_label("explanation") ]
+#let solution = context [ == #localize(text.lang, "Solution") #task_label("solution") ]
 
 // Main show rule for statements
 #let statement(doc, title: none) = {
+  show link: it => {
+    if type(it.dest) == label {
+      let target_str = str(it.dest)
+      let legacy_map = (
+        "explanation": "explanation",
+        "implementation": "implementation",
+        "samplegrader": "samplegrader",
+        "constraint": "constraints",
+        "constraints": "constraints",
+        "scoring": "scoring",
+        "solution": "solution",
+        "examples": "examples",
+      )
+      if target_str in legacy_map {
+        return link(task_label(legacy_map.at(target_str)), it.body)
+      }
+    }
+    it
+  }
+
+  show ref: it => {
+    let target_str = str(it.target)
+    let legacy_map = (
+      "explanation": "explanation",
+      "implementation": "implementation",
+      "samplegrader": "samplegrader",
+      "constraint": "constraints",
+      "constraints": "constraints",
+      "scoring": "scoring",
+      "solution": "solution",
+      "examples": "examples",
+    )
+    if target_str in legacy_map {
+      return ref(task_label(legacy_map.at(target_str)), supplement: it.supplement)
+    }
+    it
+  }
+
   show math.equation.where(block: false): it => box(it)
   set text(size: 11pt)
   show: apply_font_rules
@@ -289,6 +338,44 @@
 
 // Main show rule for editorials
 #let editorial(doc) = {
+  show link: it => {
+    if type(it.dest) == label {
+      let target_str = str(it.dest)
+      let legacy_map = (
+        "explanation": "explanation",
+        "implementation": "implementation",
+        "samplegrader": "samplegrader",
+        "constraint": "constraints",
+        "constraints": "constraints",
+        "scoring": "scoring",
+        "solution": "solution",
+        "examples": "examples",
+      )
+      if target_str in legacy_map {
+        return link(task_label(legacy_map.at(target_str)), it.body)
+      }
+    }
+    it
+  }
+
+  show ref: it => {
+    let target_str = str(it.target)
+    let legacy_map = (
+      "explanation": "explanation",
+      "implementation": "implementation",
+      "samplegrader": "samplegrader",
+      "constraint": "constraints",
+      "constraints": "constraints",
+      "scoring": "scoring",
+      "solution": "solution",
+      "examples": "examples",
+    )
+    if target_str in legacy_map {
+      return ref(task_label(legacy_map.at(target_str)), supplement: it.supplement)
+    }
+    it
+  }
+
   show math.equation.where(block: false): it => box(it)
   set text(size: 11pt)
   show: apply_font_rules
@@ -356,8 +443,6 @@
   )
   if file == "" { "stdout" } else { file }
 }
-
-#let task_name = yaml("../task.yaml").at("name", default: "");
 
 // Subtask constraints and scores
 
@@ -686,7 +771,7 @@
 }
 
 #let examples(num, infile: infile, outfile: outfile) = {
-  context [== #localize(text.lang, "Examples") <examples>]
+  context [== #localize(text.lang, "Examples") #task_label("examples")]
 
   let name = yaml("../task.yaml").name
   set text(dir: ltr)
@@ -711,7 +796,7 @@
 }
 
 #let examples-interactive(num) = {
-  context [== #localize(text.lang, "Examples") <examples>]
+  context [== #localize(text.lang, "Examples") #task_label("examples")]
 
   let name = yaml("../task.yaml").name
   set text(dir: ltr)
